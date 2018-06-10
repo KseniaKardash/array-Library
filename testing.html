@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Library for Arrays</title>
+    <script src="src/arrayLibrary.js"></script>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        var numbers = [1, 2, 3, 4];
+        var array = [1, 2, 3, 4, 5, 6, 7, 8];
+        var str = "Hi There!";
+
+        var mapArr = myMap(numbers, function(number) {
+            return (number * 2);
+        });
+
+        var filterArr = myFilter(numbers, function(number) {
+            return (number % 2) === 0;
+        });
+
+        var forEachArr = myForEach(numbers, function(number) {
+            return (number * 2);
+        });
+
+        var takeArr = myTake(numbers, 3);
+
+        var skipArr = mySkip(numbers, 2);
+
+        var reduceArr = myReduce(numbers, function(number) {
+            return (number * 2);
+        }, 0);
+
+        var chainArr = chain(array).take(3).map(function(number) {
+            return (number * 3)
+        }).value;
+
+        console.log(`chain: ${chainArr}`);
+        console.log(chainArr);
+        console.log(`map: ${mapArr}`);
+        console.log(mapArr);
+        console.log(`take: ${takeArr}`);
+        console.log(takeArr);
+        console.log(`skip: ${skipArr}`);
+        console.log(skipArr);
+        console.log(`reduce: ${reduceArr}`);
+        console.log(reduceArr);
+        console.log(`foreach: ${forEachArr}`);
+        console.log(forEachArr);
+        console.log(`filter: ${filterArr}`);
+        console.log(filterArr);
+    </script>
+</body>
+
+</html>
